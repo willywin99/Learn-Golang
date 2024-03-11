@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>HTML</title>
+	</head>
+
+	<body>
+		<div>
+			<ul>
+				{{range $value := .}}
+				<li>ID: {{$value.ID}}</li>
+				<li>Name: {{$value.Name}}</li>
+				<li>Age: {{$value.Age}}</li>
+				<li>Division:{{$value.Division}}</li>
+			</ul>
+			<hr />
+			{{end}}
+		</div>
+	</body>
+</html>
