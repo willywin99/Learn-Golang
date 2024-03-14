@@ -1,0 +1,109 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a sample service for Rest API",
+        "title": "Person API",
+        "termsOfService": "http://swagger.io/terms",
+        "contact": {
+            "name": "API Support"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:3000",
+    "basePath": "/persons",
+    "paths": {
+        "/person": {
+            "put": {
+                "description": "Update a person with the input payload",
+                "tags": [
+                    "persons"
+                ],
+                "summary": "Update a person",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Update person",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "post": {
+                "description": "Create a new person with the input payload",
+                "tags": [
+                    "persons"
+                ],
+                "summary": "Create a new person",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/person/:id": {
+            "get": {
+                "description": "Get details of a person",
+                "tags": [
+                    "person"
+                ],
+                "summary": "Get details of a person",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "delete": {
+                "description": "Delete a person",
+                "tags": [
+                    "persons"
+                ],
+                "summary": "Delete a person",
+                "parameters": [
+                    {
+                        "description": "Delete person",
+                        "name": "id",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/persons": {
+            "get": {
+                "description": "Get details of All Persons",
+                "tags": [
+                    "persons"
+                ],
+                "summary": "Get All Persons",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    }
+}

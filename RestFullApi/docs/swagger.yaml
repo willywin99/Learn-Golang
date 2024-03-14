@@ -1,0 +1,72 @@
+basePath: /persons
+host: localhost:3000
+info:
+  contact:
+    name: API Support
+  description: This is a sample service for Rest API
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms
+  title: Person API
+  version: "1.0"
+paths:
+  /person:
+    post:
+      description: Create a new person with the input payload
+      responses:
+        "200":
+          description: OK
+      summary: Create a new person
+      tags:
+      - persons
+    put:
+      description: Update a person with the input payload
+      parameters:
+      - description: Update person
+        in: query
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: OK
+      summary: Update a person
+      tags:
+      - persons
+  /person/:id:
+    delete:
+      description: Delete a person
+      parameters:
+      - description: Delete person
+        in: body
+        name: id
+        required: true
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: Delete a person
+      tags:
+      - persons
+    get:
+      description: Get details of a person
+      responses:
+        "200":
+          description: OK
+      summary: Get details of a person
+      tags:
+      - person
+  /persons:
+    get:
+      description: Get details of All Persons
+      responses:
+        "200":
+          description: OK
+      summary: Get All Persons
+      tags:
+      - persons
+swagger: "2.0"
